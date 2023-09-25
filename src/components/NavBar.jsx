@@ -4,7 +4,7 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className='navbar navbar-expand-lg navbar-light bg-light px-5'>
+        <nav className='navbar navbar-expand-lg navbar-dark bg-primary px-5'>
           <div className='container-fluid text-uppercase'>
             <a className='navbar-brand fw-bold' href='/'>
               News-Website
@@ -43,7 +43,7 @@ export default class NavBar extends Component {
                   placeholder='Search'
                   aria-label='Search'
                 />
-                <button className='btn btn-outline-success' type='submit'>
+                <button className='btn btn-outline-light' type='submit'>
                   Search
                 </button>
               </form>
