@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class NavBar extends Component {
   render() {
@@ -6,9 +7,9 @@ export default class NavBar extends Component {
       <div>
         <nav className='navbar navbar-expand-lg navbar-dark bg-primary px-5'>
           <div className='container-fluid text-uppercase'>
-            <a className='navbar-brand fw-bold' href='/'>
-              News-Website
-            </a>
+            <Link className='navbar-brand fw-bold' to='/'>
+              News-Daily
+            </Link>
             <button
               className='navbar-toggler'
               type='button'
@@ -26,17 +27,48 @@ export default class NavBar extends Component {
             >
               <ul className='navbar-nav ms-auto mb-2 mb-lg-0 me-3'>
                 <li className='nav-item'>
-                  <a className='nav-link active' aria-current='page' href='/'>
+                  <Link className='nav-link' aria-current='page' to='/'>
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className='nav-item'>
-                  <a className='nav-link' href='/about'>
+                  <Link className='nav-link' to='/about'>
                     About
-                  </a>
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/business'>
+                    Business
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/entertainment'>
+                    Entertainment
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/health'>
+                    Health
+                  </Link>
+                </li>
+
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/science'>
+                    Science
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/sports'>
+                    Sports
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/technology'>
+                    Technology
+                  </Link>
                 </li>
               </ul>
-              <form className='d-flex'>
+              {/* <form className='d-flex'>
                 <input
                   className='form-control me-2'
                   type='search'
@@ -46,7 +78,7 @@ export default class NavBar extends Component {
                 <button className='btn btn-outline-light' type='submit'>
                   Search
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
         </nav>
