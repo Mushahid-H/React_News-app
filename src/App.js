@@ -1,29 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import News from './components/News'
 import NavBar from './components/NavBar'
-import LoadingBar from 'react-top-loading-bar'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   let pageSize = 15
 
-  const { progress, setProgress } = useState(0)
-
   return (
     <div>
       <Router>
         <NavBar />
-        <LoadingBar color='#f11946' progress={progress} height={3} />
 
         <Routes>
           <Route
             path='/'
             element={
               <News
-                setProgress={setProgress}
                 key='general'
                 pageSize={pageSize}
-                country='us'
+                country='in'
                 category='general'
               />
             }
@@ -32,7 +28,6 @@ const App = () => {
             path='/business'
             element={
               <News
-                setProgress={setProgress}
                 key='business'
                 pageSize={pageSize}
                 country='us'
@@ -44,7 +39,6 @@ const App = () => {
             path='/entertainment'
             element={
               <News
-                setProgress={setProgress}
                 key='entertainment'
                 pageSize={pageSize}
                 country='in'
@@ -56,7 +50,6 @@ const App = () => {
             path='/sports'
             element={
               <News
-                setProgress={setProgress}
                 key='sports'
                 pageSize={pageSize}
                 country='us'
@@ -68,7 +61,6 @@ const App = () => {
             path='/science'
             element={
               <News
-                setProgress={setProgress}
                 key='science'
                 pageSize={pageSize}
                 country='us'
@@ -80,7 +72,6 @@ const App = () => {
             path='/health'
             element={
               <News
-                setProgress={setProgress}
                 key='health'
                 pageSize={pageSize}
                 country='us'
@@ -92,7 +83,6 @@ const App = () => {
             path='/technology'
             element={
               <News
-                setProgress={setProgress}
                 key='technology'
                 pageSize={pageSize}
                 country='us'

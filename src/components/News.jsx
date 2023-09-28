@@ -13,25 +13,20 @@ const News = (props) => {
   }
 
   const updateNews = async () => {
-    // props.setProgress(10)
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=e21242aa87244bf5b4709af2da0ac368&page=${this.state.page}&pageSize=${props.pageSize}`
     document.title = `${CaptalizeWord(props.category)} News-Daily`
     setLoading(true)
-    // props.setProgress(30)
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=e21242aa87244bf5b4709af2da0ac368&page=${page}&pageSize=${props.pageSize}`
     let data = await fetch(url)
     let parsedData = await data.json()
-    // props.setProgress(70)
-    console.log(parsedData)
+
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
-    // setLoading(false)
-
-    props.setProgress(100)
+    setLoading(false)
   }
 
   useEffect(() => {
     updateNews()
-  }, [1])
+  }, [])
 
   const handleNextClick = async () => {
     setPage(page + 1)
@@ -44,8 +39,8 @@ const News = (props) => {
 
   return (
     <>
-      <div className='container my-3'>
-        <div className='row'>
+      <div className='container my-3 mt-5 pt-5'>
+        <div className='row '>
           {loading && <Spinner />}
 
           {!loading &&
